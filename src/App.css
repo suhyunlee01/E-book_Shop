@@ -1,10 +1,16 @@
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
 
+.pageTitle{
+  font-size: 24px;
+  display: flex;
+  margin-left: 40px;
+}
 .title{
   margin-top: 10px;
   font-size: 16px;
   font-weight: 700;
+  margin-bottom: 4px;
 }
 .author{
   font-size: 14px;
@@ -13,9 +19,6 @@
 .star{
   font-size: 14px;
   color: rgb(107, 107, 107);
-}
-.bookImg{
-  cursor: grab;
 }
 .searchBar{
   background-color: white;
@@ -29,10 +32,18 @@
   justify-content: center;
   overflow: hidden;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 16px;
 }
-.BtnLogIn{
-  margin-left: 20px;
+.linkTo{
+  font-size: 12px;
+  color: #ffffff;
+  margin-bottom: 50px;
+  background-color: rgb(218, 230, 253);
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 50px;
 }
 .main_bg{
   width: 100%;
@@ -85,6 +96,7 @@
   color: #61dafb;
 }
 
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -93,3 +105,4 @@
     transform: rotate(360deg);
   }
 }
+
