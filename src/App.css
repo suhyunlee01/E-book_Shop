@@ -1,6 +1,21 @@
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
 
+.detailTitle{
+  font-size: 28px;
+  font-weight: 600;
+}
+.btnHeart{
+  width: 40px;
+  height: 39px;
+  border: 1px rgb(188, 191, 219) solid;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  margin-left: 20px;
+}
+.details{
+  font-weight: 600;
+}
 .pageTitle{
   font-size: 24px;
   display: flex;
@@ -26,19 +41,38 @@
   margin-right: 14px;
 }
 .description{
-  gap: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 10px;
   overflow: hidden;
   width: 100%;
   margin-bottom: 16px;
+}
+.description2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  font-size: 14px;
+  color: rgb(107, 107, 107);
+}
+.description3{
+  margin-top: 30px;
+  width: 500px;
+  background-color: rgb(220, 235, 255);
+  border-radius: 20px;
+  padding: 50px;
+  height: auto;
+}
+.colnum1{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
 }
 .linkTo{
   font-size: 12px;
   color: #ffffff;
   margin-bottom: 50px;
-  background-color: rgb(218, 230, 253);
+  background-color: rgb(218, 242, 253);
   padding-left: 60px;
   padding-right: 60px;
   padding-top: 10px;
@@ -57,6 +91,9 @@
   position: relative; 
   margin-bottom: 60px;
 
+}
+.bookImg{
+  margin-top: 62px;
 }
 .main_bg_img{
   height: 400px;
@@ -95,8 +132,14 @@
 .App-link {
   color: #61dafb;
 }
-
-
+.detailBtns{
+  margin-top: 20px;
+}
+.detailRow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
