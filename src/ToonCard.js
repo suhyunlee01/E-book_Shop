@@ -12,7 +12,7 @@ function ToonCard(props){
           <span className='star'>별점 {toon.star}</span>
         </div>
 
-         {/* 미리 id로 구분해서 만들어둔 웹툰 상세 라우터들로 이동. Route 호출 시, 해당 id에 맞는 라우터에 toon 데이터 보내놓음*/}
+         {/* props로 해당 toon 정보의 id에 맞는 /toon_details/${toon.id} 라우터로 이동.(그리고 해당 router들은 id에 맞는 toon 데이터를 props로 받아서 ToonDetails 컴포넌트 출력하고 있음)*/}
         <span className="linkTo"><Link style={{ textDecoration: "none" }} to={`/toon_details/${toon.id}`}>자세히+</Link></span>
       </div>
     )

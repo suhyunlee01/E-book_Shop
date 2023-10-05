@@ -10,6 +10,7 @@ import NobelDetails from './pages/Details';
 import ToonDetails from './pages/ToonDetails';
 import Toon from './Toon';
 import About from './pages/About';
+import Login from './pages/Event';
 import toonData from './ToonData';
 
 // import SimpleSlider from './carousel';
@@ -38,7 +39,7 @@ function App() {
             <Nav.Link href="/toon">웹툰</Nav.Link>
             <Nav.Link href="/about">소개</Nav.Link>
           </Nav>
-          <Button onClick={()=>{navigate("#")}} className='BtnLogIn' variant="outline-light">로그인</Button>{' '}
+          <Button onClick={()=>{navigate("/login")}} className='BtnLogIn' variant="outline-light">로그인</Button>{' '}
         </Container>
       </Navbar>
 
@@ -69,17 +70,17 @@ function App() {
         {/* /nobel 페이지를 하나 만들고, 해당 컴포넌트의 엘리먼트를 설정함 */}        
         <Route path='/about' element={<About></About>}></Route>
 
+        <Route path="/login" element={<Login />}></Route>
 
-        {/* /details 페이지를 하나 만들고, 해당 컴포넌트의 엘리먼트를 설정함 */}
+
+        {/* 웹소설 데이터 id별로 /toon_details 페이지 + /book.id 로 Router 각각 하나씩 만들고 호출하기.. NobelDetails 컴포넌트는 각각의 book 데이터를 props로 받아서 출력 */}
         {data.map((book)=>{
           return <Route key={book.id} path={`/details/${book.id}`} element={<NobelDetails book={book}></NobelDetails>}></Route>
-          
         })} 
       
         
-        {/* 웹툰 데이터 id별로 /toon_details 페이지 + /toonid url로 Route 각각 하나씩 만들고 호출하기 */}
+        {/* 웹툰 데이터 id별로 /toon_details 페이지 + /toon.id 로 Router 각각 하나씩 만들고 호출하기...ToonDetails 컴포넌트는 각각의 toon 데이터를 props로 받아서 출력 */}
         {toonData.map((toon) => {
-
           return <Route key={toon.id} path={`/toon_details/${toon.id}`} element={<ToonDetails toon={toon}></ToonDetails>}></Route>
         })}
         
