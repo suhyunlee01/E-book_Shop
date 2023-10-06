@@ -25,9 +25,19 @@ function App() {
 
   //data를 받아옴
   let[books, setBooks] = useState(data);
-  let navigate = useNavigate();
-
   console.log(books[0].star)
+
+  let [toons, setToons] = useState(toonData);
+
+  //Toon 컴포넌트에서 업데이트한 데이터를 인자로 받아오기 위한 함수
+  const updateToons = (newToons) => {
+    setToons(newToons);
+    console.log("업뎃", newToons);
+  };
+
+  
+  let navigate = useNavigate();
+  
 
   return (
     <div className="App">
@@ -64,7 +74,8 @@ function App() {
       }></Route>
 
         {/* /toon 페이지를 하나 만들고, 해당 컴포넌트의 엘리먼트를 설정함 */}
-        <Route path='/toon' element={<Toon></Toon>}></Route>
+        {/* Toon 컴포넌트에서 업데이트한 데이터를 인자로 받아오기 위한 함수 updateToons 전달 */}
+        <Route path='/toon' element={<Toon updateToons={updateToons}></Toon>}></Route>
 
         {/* /nobel 페이지를 하나 만들고, 해당 컴포넌트의 엘리먼트를 설정함 */}        
         <Route path='/about' element={<About></About>}></Route>
@@ -79,7 +90,7 @@ function App() {
       
         
         {/* 웹툰 데이터 id별로 /toon_details 페이지 + /toon.id 로 Router 각각 하나씩 만들고 호출하기...ToonDetails 컴포넌트는 각각의 toon 데이터를 props로 받아서 출력 */}
-        {toonData.map((toon) => {
+        {toons.map((toon) => {
           return <Route key={toon.id} path={`/toon_details/${toon.id}`} element={<ToonDetails toon={toon}></ToonDetails>}></Route>
         })}
         
