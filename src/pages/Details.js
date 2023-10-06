@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Tab from "../tap";
 
 //styled-components 라이브러리를 styled라는 이름으로 가져옴
 // import styled from 'styled-components';

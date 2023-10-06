@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import bg from './img/화산귀환1.webp';
 import toonData from './ToonData';
 import ToonCard from './ToonCard';
 import axios from 'axios';
-
+import App from './App';
 
 function Toon(){
     let [toons, setToons] = useState(toonData);
@@ -39,8 +39,10 @@ function Toon(){
                         //toons Sate의 변경함수를 통해서 기존 toonData를 copyArray로 업데이트 해줌.
                         setToons(copyArray); //이후 위의 ToonCard 컴포넌트에 반영되어 출력됨.
 
-                    })
+                    }).catch(()=>{console.log("데이터 가져오기 실패");})
 
+                    //만약 여러개의 요청을 보내고 싶다면?
+                    //Promise.all([axios.get('url'), axios.get('url'), axios.get('url').then().catch()])
 
                 }
             }>더보기</button>

@@ -43,7 +43,6 @@ function App() {
         </Container>
       </Navbar>
 
-
       {/* Routes가 최상위로, Route들을 관리한다. */}
       <Routes>
       {/* 디폴트 메인 페이지 */}

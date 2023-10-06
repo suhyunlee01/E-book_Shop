@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Tab from "../tap";
 
 function ToonDetails(props){
 
@@ -90,6 +91,7 @@ function ToonDetails(props){
             <p className="description3">{toon.description}</p>
           </div>
         </div>
+        <Tab/>
       </div>
     )
   }

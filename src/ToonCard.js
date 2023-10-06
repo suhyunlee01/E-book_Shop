@@ -18,6 +18,7 @@ function ToonCard(props){
 
          {/* props로 해당 toon 정보의 id에 맞는 /toon_details/${toon.id} 라우터로 이동.(그리고 해당 router들은 id에 맞는 toon 데이터를 props로 받아서 ToonDetails 컴포넌트 출력하고 있음)*/}
         <span className="linkTo"><Link style={{ textDecoration: "none" }} to={`/toon_details/${toon.id}`}>자세히 보기</Link></span>
+      
       </div>
     )
   }
