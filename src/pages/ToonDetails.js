@@ -52,7 +52,7 @@ function ToonDetails(props){
           null
         }
         
-        <input onChange={
+        {/* <input onChange={
           (e) => {
             // if(isNaN(e.target.value)===true){
             //   window.alert('숫자만 입력할 수 있어요.');
@@ -60,7 +60,7 @@ function ToonDetails(props){
 
             setNum(e.target.value);
           }
-        } className="userInput" type="text" placeholder="입력해주세요"></input>
+        } className="userInput" type="text" placeholder="입력해주세요"></input> */}
 
 
         <div className="row detailRow">

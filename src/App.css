@@ -1,6 +1,9 @@
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
 
+.box{
+  cursor: grab;
+}
 .detailTitle{
   font-size: 28px;
   font-weight: 600;
@@ -28,6 +31,7 @@
   margin-bottom: 4px;
 }
 .author{
+  margin-right: 8px;
   font-size: 14px;
   color: rgb(107, 107, 107);
 }
@@ -68,13 +72,18 @@
   align-items: start;
   flex-direction: column;
 }
+.col-sm-6{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .linkTo{
+  width: 173px;
   font-size: 12px;
   color: #ffffff;
   margin-bottom: 50px;
   background-color: rgb(218, 242, 253);
-  padding-left: 60px;
-  padding-right: 60px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 50px;
