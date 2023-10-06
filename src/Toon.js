@@ -6,7 +6,8 @@ import axios from 'axios';
 
 
 function Toon(){
-    let [toons] = useState(toonData)
+    let [toons, setToons] = useState(toonData);
+
     return(
         <div>
             <div className='main_bg'>
@@ -24,9 +25,23 @@ function Toon(){
             <button className='btnSeeMore' onClick={
                 (e)=>{
                     //데이터 요청해오기
-                    axios.get('https://jamsuham75.github.io/image/data2.json').then((result)=>{
-                        console.log(result.data);
+                    axios.get('https://gist.githubusercontent.com/suhyunlee01/f883ba494a1231b0280ca1f16c9e78c7/raw/20b955e7e023ce15afc8b568c7e58fd0d1e01f79/toonData.json')
+                    .then((result)=>{
+                        //axios로 불러온 데이터(배열)
+                        console.log("성공", result.data);
+                        //기존 toonData.js에서 toons Sate로 가져온 데이터(배열)
+                        console.log(toons);
+
+                        //toons Sate로 가져온 데이터 배열과 axios로 불러온 result의 데이터 배열을 합치기
+                        let copyArray = [...toons, ...result.data];
+                        console.log(copyArray);
+
+                        //toons Sate의 변경함수를 통해서 기존 toonData를 copyArray로 업데이트 해줌.
+                        setToons(copyArray); //이후 위의 ToonCard 컴포넌트에 반영되어 출력됨.
+
                     })
+
+
                 }
             }>더보기</button>
         </div>
