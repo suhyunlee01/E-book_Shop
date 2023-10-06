@@ -4,8 +4,12 @@ import toonData from './ToonData';
 import ToonCard from './ToonCard';
 import axios from 'axios';
 import App from './App';
+import { Routes, Route} from 'react-router-dom';
+import ToonDetails from './pages/ToonDetails';
 
-function Toon(){
+function Toon(props){
+    const { updateToons } = props;
+
     let [toons, setToons] = useState(toonData);
 
     return(
@@ -38,14 +42,18 @@ function Toon(){
 
                         //toons Sate의 변경함수를 통해서 기존 toonData를 copyArray로 업데이트 해줌.
                         setToons(copyArray); //이후 위의 ToonCard 컴포넌트에 반영되어 출력됨.
-
+                        
+                        //updateToons 함수를 호출해서 업데이트된 toon 데이터를 인자로 전달한다.
+                        //이러면 App 컴포넌트의 updateToons 함수에 인자로 전달되어서 App 컴포넌트도 이제 업데이트된 데이터를 갖고 있게된다.
+                        updateToons(copyArray);
+                        
                     }).catch(()=>{console.log("데이터 가져오기 실패");})
 
                     //만약 여러개의 요청을 보내고 싶다면?
                     //Promise.all([axios.get('url'), axios.get('url'), axios.get('url').then().catch()])
-
                 }
             }>더보기</button>
+
         </div>
     )
 }
