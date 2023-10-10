@@ -31,6 +31,8 @@ function App() {
 
   //Toon 컴포넌트에서 업데이트한 데이터를 인자로 받아오기 위한 함수
   const updateToons = (newToons) => {
+    
+    //전달받은 데이터로 toons 업데이트! = 이제 toons state는 업데이트된 툰 데이터 가지고 있음
     setToons(newToons);
     console.log("업뎃", newToons);
   };
