@@ -21,7 +21,7 @@ function ToonDetails(props){
 
     useEffect(()=>{
 
-      //2초 뒤 true -> false 변경 처리
+      //5초 뒤 true -> false 변경 처리
       let timer = setTimeout(()=>{
         setAlert(false)
       }, 5000);
@@ -48,7 +48,7 @@ function ToonDetails(props){
         {/* 2초 뒤 사라지는 광고 문구 */}
         { alert == true ?
           <div className="show">
-          5초 이내 구매 시 10% 할인
+            5초 이내 구매 시 10% 할인
           </div> :
           null
         }
@@ -91,7 +91,8 @@ function ToonDetails(props){
             <p className="description3">{toon.description}</p>
           </div>
         </div>
-        <Tab/>
+        {/* 해당 디테일 페이지의 toon 데이터를 전달함. 탭에 들어갈 컨텐츠에 쓸 것 */}
+        <Tab toon={toon}></Tab>
       </div>
     )
   }

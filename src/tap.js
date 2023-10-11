@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 
-function Tab() {
+function Tab(props) {
+
+    //해당 디테일 페이지의 toon 데이터를 받아옴
+    let { toon } = props
+    console.log('toon 데이터:', toon);
     //tap의 0번째~2번째까지의 버튼 중 클릭된 버튼의 숫자 state로 저장
     let [tab, setTab] = useState(0);
     let [color1, setColor1] = useState('blue');
@@ -37,13 +41,14 @@ function Tab() {
             </Nav.Item>
         </Nav>
 
-        <TabContent tab={tab}></TabContent>
+        {/* toondetail 컴포넌트로부터 받아온 toon 데이터 컨텐츠에 전달 */}
+        <TabContent tab={tab} toon={toon} ></TabContent>
 
     </>
   );
 }
 
-function TabContent({tab}){
+function TabContent({tab, toon}){
     let [fade, setFade] = useState('');
 
     useEffect(()=>{
@@ -56,7 +61,7 @@ function TabContent({tab}){
     //tab에 저장된 숫자를 인덱스로 해서 왼쪽 배열의 요소 선택함
     return (
         <div className={fade}>
-            {[<div>리뷰</div>, <div>관련 컨텐츠</div>, <div>상세정보</div>][tab]}
+            {[<div>리뷰</div>, <div>관련 컨텐츠</div>, <div>{toon.title}</div>][tab]}
         </div>
     );
 }
