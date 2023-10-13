@@ -24,20 +24,20 @@ function Tab(props) {
                 <Nav.Link href="#" style={{color:color1}}>리뷰</Nav.Link>
             </Nav.Item>
             <Nav.Item onClick={()=>{
-                setTab(1);
-                setColor1('black');
-                setColor2('blue');
-                setColor3('black');
-            }}>
-                <Nav.Link eventKey="#" style={{color:color2}}>관련된 컨텐츠</Nav.Link>
-            </Nav.Item>
-            <Nav.Item onClick={()=>{
                 setTab(2);
                 setColor1('black');
                 setColor2('black');
                 setColor3('blue');
             }}>
                 <Nav.Link eventKey="#" style={{color:color3}}>상세정보</Nav.Link>
+            </Nav.Item>
+            <Nav.Item onClick={()=>{
+                setTab(1);
+                setColor1('black');
+                setColor2('blue');
+                setColor3('black');
+            }}>
+                <Nav.Link eventKey="#" style={{color:color2}}>관련된 컨텐츠</Nav.Link>
             </Nav.Item>
         </Nav>
 

@@ -1,14 +1,21 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
 import Tab from "../tap";
+//context 객체 가져다 사용함
+import { Context1 } from "../App";
 
 function ToonDetails(props){
 
-  useEffect(()=>{console.log('마운트');
-  })
+  //Context라는 보관함 안의 state들을 해체해서 사용할 수 있게 함.
+  // useContext(Context1);
+  //이런식으로 state를 provider 컴포넌트로부터 받아와서 사용할 수 있다.
+  // const { test } = useContext(Context1);
+
+  let navigate = useNavigate();
   let [count, setCount] = useState(0);
 
+  
   let { toon } = props
   console.log(toon);
 
@@ -45,6 +52,7 @@ function ToonDetails(props){
     return(
       <div className="container text-center">
 
+        {/* <h1>{test}</h1> */}
         {/* 2초 뒤 사라지는 광고 문구 */}
         { alert == true ?
           <div className="show">
@@ -68,7 +76,9 @@ function ToonDetails(props){
           <div className="col">
             <img className='bookImg' height={320} width={220} src={toon.src}></img>
             <div className="detailBtns">
-              <button className="btn btn-primary">장바구니</button>
+              <button className="btn btn-primary" onClick={()=>{
+                navigate("/cart")
+              }}>장바구니</button>
               <button className="btnHeart" onClick={
                 () => {
                   setCount(count + 1);

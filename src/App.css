@@ -135,7 +135,14 @@
   padding-left: 18px;
   padding-right: 18px;
 }
-
+.btnDelete{
+  border: none;
+  background-color: rgb(106, 171, 255);
+  color: white;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 
 .App {

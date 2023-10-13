@@ -8,8 +8,11 @@ import { Routes, Route} from 'react-router-dom';
 import ToonDetails from './pages/ToonDetails';
 
 function Toon(props){
+
+    //App 컴포넌트에 데이터를 인자로 받아오기 위한 함수
     const { updateToons } = props;
 
+    //toonData 받아와서 state로 저장
     let [toons, setToons] = useState(toonData);
 
     return(
@@ -43,8 +46,8 @@ function Toon(props){
                         //toons Sate의 변경함수를 통해서 기존 toonData를 copyArray로 업데이트 해줌.
                         setToons(copyArray); //이후 위의 ToonCard 컴포넌트에 반영되어 출력됨.
                         
-                        //updateToons 함수를 호출해서 업데이트된 toon 데이터를 인자로 전달한다.
-                        //이러면 App 컴포넌트의 updateToons 함수에 인자로 전달되어서 App 컴포넌트도 이제 업데이트된 데이터를 갖고 있게된다.
+                        //업데이트된 toon 데이터를 APP 컴포넌트에 인자로 전달하는 함수이다.
+                        //이러면 App 컴포넌트의 updateToons 함수에 인자로 데이터가 전달되어서 App 컴포넌트도 이제 업데이트된 데이터를 갖고 있게된다.
                         updateToons(copyArray);
                         
                     }).catch(()=>{console.log("데이터 가져오기 실패");})
