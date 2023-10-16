@@ -7,8 +7,20 @@ import ToonDetails from "./pages/ToonDetails";
 
 let user = createSlice({
     name : 'userName',
-    initialState : 'kim'
+    initialState : 'kim',
+    //초기값에서 값 변경
+    reducers : {
+        //변경함수 지정하기
+        changeName(){
+            return 'park'
+        }
+    }
 })
+
+//user.actions 내에 user 슬라이스의 모든 것이 담긴다.
+//외부로 변경함수 가져옴
+export let {changeName} = user.actions
+
 
 let stock = createSlice({
     name : 'stockName',
