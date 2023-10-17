@@ -4,6 +4,8 @@ import { useEffect, useState, useContext } from "react";
 import Tab from "../tap";
 //context 객체 가져다 사용함
 import { Context1 } from "../App";
+import { addItem } from "../store";
+import { useDispatch } from "react-redux";
 
 function ToonDetails(props){
 
@@ -14,8 +16,9 @@ function ToonDetails(props){
 
   let navigate = useNavigate();
   let [count, setCount] = useState(0);
-
+  let dispatch = useDispatch();
   
+
   let { toon } = props
   console.log(toon);
 
@@ -77,7 +80,9 @@ function ToonDetails(props){
             <img className='bookImg' height={320} width={220} src={toon.src}></img>
             <div className="detailBtns">
               <button className="btn btn-primary" onClick={()=>{
-                navigate("/cart")
+                navigate("/cart");
+                //아이템 장바구니에 추가하기 위해서 procut 슬라이스 배열에 추가
+                dispatch(addItem({id: 1, name: toon.title, count : 1 }))
               }}>장바구니</button>
               <button className="btnHeart" onClick={
                 () => {

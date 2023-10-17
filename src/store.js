@@ -22,8 +22,8 @@ let stock = createSlice({
 let product = createSlice({
     name: 'product',
     initialState: [
-        { id: 0, name: '광마회귀', count: 1 },
-        { id: 1, name: '화산귀환', count: 1}
+        { id: 0, name: '테스트아이템', count: 1 },
+        { id: 1, name: '테스트아이템2', count: 1}
     ],
     reducers: {
         incraseCount(state, action){
@@ -38,11 +38,15 @@ let product = createSlice({
             
             //product 배열에 인자로 받아온 index 값을 배열의 index로 해서, 배열 내부 객체 안의 count에 접근한다.
             state[index].count += action.payload.IncreaseNum; //인자로 받아온 숫자만큼 수를 더해준다.
+        },
+        //action으로 추가할 아이템 받아오기
+        addItem(state, action){
+            state.push( action.payload );
         }
     }
 });
 
-export let {incraseCount} = product.actions;
+export let {incraseCount, addItem} = product.actions;
 
 
 
