@@ -1,25 +1,16 @@
 //리덕스로부터 가져옴
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import ToonDetails from "./pages/ToonDetails";
+//user라는 이름의 slice를 따로 분할해서 import해줌.
+import user from "./store/userSlice";
 
 //redux에서 state = slice 를 보관하는 법. usestate = createSlice
 //let temp = useState('test') === createSlice({name: 'temp', initialState : 'test'})
 
-let user = createSlice({
-    name : 'userName',
-    initialState : 'kim',
-    //초기값에서 값 변경
-    reducers : {
-        //변경함수 지정하기
-        changeName(){
-            return 'park'
-        }
-    }
-})
 
 //user.actions 내에 user 슬라이스의 모든 것이 담긴다.
-//외부로 변경함수 가져옴
-export let {changeName} = user.actions
+//외부로 변경함수 내보냄
+export let {changeName, increaseNum} = user.actions;
 
 
 let stock = createSlice({
@@ -32,9 +23,26 @@ let product = createSlice({
     name: 'product',
     initialState: [
         { id: 0, name: '광마회귀', count: 1 },
-        { id: 1, name: '화산귀환', count: 2}
+        { id: 1, name: '화산귀환', count: 1}
     ],
+    reducers: {
+        incraseCount(state, action){
+            //오브젝트로 보낸 action 인자.payload.index의 값
+            console.log(action.payload.index);
+             //오브젝트로 보낸 action 인자.payload.IncreaseNum의 값
+            console.log(action.payload.IncreaseNum);
+
+            //만약 인자로 받아온 index와, product 배열의 인덱스 내의 id 값이 같은 경우,
+            //인자로 받아온 index의 값을 변수에 저장
+            let index = state.findIndex((a)=>{return action.payload.index === state[action.payload.index].id})
+            
+            //product 배열에 인자로 받아온 index 값을 배열의 index로 해서, 배열 내부 객체 안의 count에 접근한다.
+            state[index].count += action.payload.IncreaseNum; //인자로 받아온 숫자만큼 수를 더해준다.
+        }
+    }
 });
+
+export let {incraseCount} = product.actions;
 
 
 
