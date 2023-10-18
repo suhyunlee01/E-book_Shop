@@ -32,21 +32,24 @@ let product = createSlice({
              //오브젝트로 보낸 action 인자.payload.IncreaseNum의 값
             console.log(action.payload.IncreaseNum);
 
-            //만약 인자로 받아온 index와, product 배열의 인덱스 내의 id 값이 같은 경우,
             //인자로 받아온 index의 값을 변수에 저장
-            let index = state.findIndex((a)=>{return action.payload.index === state[action.payload.index].id})
-            
+            let index = action.payload.index;
             //product 배열에 인자로 받아온 index 값을 배열의 index로 해서, 배열 내부 객체 안의 count에 접근한다.
-            state[index].count += action.payload.IncreaseNum; //인자로 받아온 숫자만큼 수를 더해준다.
+            // state[index].count += action.payload.IncreaseNum; //인자로 받아온 숫자만큼 수를 더해준다.
+            state[index].count = state[index].count + action.payload.IncreaseNum
         },
         //action으로 추가할 아이템 받아오기
         addItem(state, action){
-            state.push( action.payload );
+            state.push( action.payload);
+        },
+        deletItem(state, action){
+            //삭제 버튼을 누르면 deleteItem 액션을 호출 / 인자로 받아온 index를 splice 함수로 삭제
+            state.splice(action.payload, 1);
         }
     }
 });
 
-export let {incraseCount, addItem} = product.actions;
+export let {incraseCount, addItem, deletItem} = product.actions;
 
 
 

@@ -82,7 +82,7 @@ function ToonDetails(props){
               <button className="btn btn-primary" onClick={()=>{
                 navigate("/cart");
                 //아이템 장바구니에 추가하기 위해서 procut 슬라이스 배열에 추가
-                dispatch(addItem({id: 1, name: toon.title, count : 1 }))
+                dispatch(addItem({id: toon.id, name: toon.title, count : 1 }))
               }}>장바구니</button>
               <button className="btnHeart" onClick={
                 () => {

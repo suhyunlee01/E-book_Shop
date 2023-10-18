@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import { useNavigate} from 'react-router-dom';
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useDispatch } from 'react-redux';
-import { changeName, increaseNum, incraseCount } from '../store';
+import { changeName, increaseNum, incraseCount, deletItem } from '../store';
 
 
 function Cart() {
@@ -37,6 +37,7 @@ function Cart() {
                     <th>삭제하기</th>
                     </tr>
                 </thead>
+                {/* slice로 받아온 데이터 화면에 출력 */}
                 {/* myData = product slice 이기 때문에 배열이라서 map을 통해 구현 */}
                 {myData.map((data, index)=>{
                     return(
@@ -59,7 +60,9 @@ function Cart() {
                                         dispatch(incraseCount(action));
                                     }}>+10</button>
                                 </td>
-                                <td><button className='btnDelete'>삭제</button></td>
+                                <td><button className='btnDelete' onClick={()=>{
+                                    dispatch(deletItem(index));
+                                }}>삭제</button></td>
                             </tr>
                         </tbody>
                         )
