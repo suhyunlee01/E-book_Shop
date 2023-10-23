@@ -60,7 +60,7 @@ function App() {
           <Nav className="me-auto">
             <Nav.Link href="/">웹소설</Nav.Link>
             <Nav.Link href="/toon">웹툰</Nav.Link>
-            <Nav.Link href="/about">소개</Nav.Link>
+            <Nav.Link href="/about">내 정보</Nav.Link>
           </Nav>
           <Button onClick={()=>{navigate("/cart")}} className='BtnLogIn' variant="outline-light">장바구니</Button>{' '}
         </Container>

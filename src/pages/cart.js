@@ -23,10 +23,8 @@ function Cart() {
 
     return (
         <div>
-            {myDataAll.user.name}의 장바구니, 나이: {myDataAll.user.age}
-            <button onClick={()=>{
-                dispatch(increaseNum(10));
-            }}>증가</button>
+            <p>{myDataAll.user.name}의 장바구니</p>
+
             <Table striped bordered hover>
                 <thead>
                     <tr>

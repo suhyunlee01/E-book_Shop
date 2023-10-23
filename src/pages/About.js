@@ -1,14 +1,34 @@
+import { changeName } from "../store";
+import { useDispatch, useSelector } from "react-redux";
+import user from "../store/userSlice";
+
 function About(){
-    return(
-      <div>
-        <img width={300} height={300}></img>
-        <p>이수현</p>
-        <p>leesuhyun05505@gmail.com</p>
-        <p>Phone: 010-1111-1111</p>
-        <p>가산디지털단지 70</p>
-        <p>자기소개</p>
-      </div>
-    )
+  let userData = useSelector((state) => {return state.user});
+  console.log(userData);
+  let dispatch = useDispatch();
+
+  return(
+    <div>
+      <img width={300} height={300}></img>
+      <form>
+        <input type="text" onChange={(e)=>{
+          if(e.target.value){
+            dispatch(changeName(e.target.value));
+          }
+        }}></input>
+        <button type="submit" onClick={(e)=>{
+          if(e.target.value){
+            dispatch(changeName(e.target.value));
+          }
+        }}>저장</button>
+      </form>
+      <p>이름:  {userData.name}</p>
+      <p>나이:  {userData.age} 세</p>
+      <p>이메일:  {userData.email}</p>
+      <p>전화번호:  {userData.phone}</p>
+      <p>회원 등급:  {userData.grade}</p>
+    </div>
+  )
 }
 
 export default About;
