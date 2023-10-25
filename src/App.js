@@ -3,13 +3,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Button, } from 'react-bootstrap';
-import bg from './img/전독시1.jpg';
 import { useState, createContext, lazy, Suspense } from 'react';
-import Card from './Card';
 import Toon from './Toon';
 import About from './pages/About';
-import Login from './pages/Event';
 import toonData from './ToonData';
+import Home from './Home';
 import data from './data';
 //라우터 제작 시 필요
 import { Route, Routes, Link, useNavigate, Outlet } from 'react-router-dom';
@@ -34,7 +32,6 @@ function App() {
 
   //noble data를 받아옴
   let[books, setBooks] = useState(data);
-  console.log(books[0].star)
   //toon data를 받아옴
   let [toons, setToons] = useState(toonData);
 
@@ -48,13 +45,19 @@ function App() {
     console.log("업뎃", newToons);
   };
 
+  const updateNobels = (newBooks) => {
+    //인자로 전달받은 데이터로 toons 업데이트! = 이제 toons state는 업데이트된 툰 데이터 가지고 있음
+    setBooks(newBooks);
+    console.log("업뎃", newBooks);
+  };
+
   
   let navigate = useNavigate();
   
 
   return (
     <div className="App">
-      <Navbar bg="primary" data-bs-theme="dark">
+      <Navbar className='navbar' bg="primary" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="/">Reada Books</Navbar.Brand>
           <Nav className="me-auto">
@@ -70,22 +73,7 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           {/* 디폴트 메인 페이지 */}
-          <Route path='/' element={
-            <div>
-              <div className='main_bg'>
-                <img className='main_bg_img' src={bg}></img>
-              </div>
-    
-              <div class="container text-center">
-                <div className="row">
-                  {books.map((book, index) => (
-                    <Card key={index} book={book}></Card>
-                  ))}
-
-                </div>
-              </div>
-            </div>
-          }></Route>
+          <Route path='/' element={<Home updateNobels={updateNobels}></Home>}></Route>
 
           {/* /toon 페이지를 하나 만들고, 해당 컴포넌트의 엘리먼트를 설정함 */}
           {/* Toon 컴포넌트로부터 업데이트한 데이터를 인자로 받아오기 위한 함수 updateToons 전달 */}
@@ -98,8 +86,8 @@ function App() {
 
 
           {/* 웹소설 데이터 id별로 /toon_details 페이지 + /book.id 로 Router 각각 하나씩 만들고 호출하기.. NobelDetails 컴포넌트는 각각의 book 데이터를 props로 받아서 출력 */}
-          {data.map((book)=>{
-            return <Route key={book.id} path={`/details/${book.id}`} element={<NobelDetails book={book}></NobelDetails>}></Route>
+          {books.map((book)=>{
+            return <Route key={book.id} path={`/nobel_details/${book.id}`} element={<NobelDetails book={book}></NobelDetails>}></Route>
           })} 
         
           

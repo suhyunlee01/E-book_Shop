@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import Tab from "../tap";
 //context 객체 가져다 사용함
-import { Context1 } from "../App";
 import { addItem } from "../store";
 import { useDispatch } from "react-redux";
 
@@ -107,7 +106,7 @@ function ToonDetails(props){
           </div>
         </div>
         {/* 해당 디테일 페이지의 toon 데이터를 전달함. 탭에 들어갈 컨텐츠에 쓸 것 */}
-        <Tab toon={toon}></Tab>
+        <Tab data={toon}></Tab>
       </div>
     )
   }

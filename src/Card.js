@@ -7,7 +7,7 @@ function Card(props){
     
     return(
       <div className="col-sm-6 col-md-3 box" onClick={()=>{
-        navigate(`/details/${book.id}`);
+        navigate(`/nobel_details/${book.id}`);
       }}>
         <img className='bookImg' height={240} width={173} src={book.src}></img>
         <p className='title'>{book.title}</p>
@@ -16,7 +16,7 @@ function Card(props){
           <span className='star'>별점 {book.star}</span>
         </div>
 
-        <div className="linkTo"><Link style={{ textDecoration: "none" }} to={`/details/${book.id}`}>자세히보기</Link></div>
+        <div className="linkTo"><Link style={{ textDecoration: "none" }} to={`/nobel_details/${book.id}`}>자세히보기</Link></div>
       </div>
     )
   }

@@ -88,6 +88,10 @@
   padding-bottom: 10px;
   border-radius: 50px;
 }
+.bookImg{
+  margin-top: 62px;
+}
+/* 
 .main_bg{
   width: 100%;
   display: flex;
@@ -101,16 +105,14 @@
   margin-bottom: 60px;
 
 }
-.bookImg{
-  margin-top: 62px;
-}
 .main_bg_img{
   height: 400px;
   width: 1020px;
   object-fit: cover;
   box-shadow: 0px 0px 40px #3f3f3f;
   position: absolute;
-}
+} */
+
 .likes{
   margin-left: 12px;
 }
@@ -152,6 +154,19 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+.navbar{
+  z-index: 100;
+  box-shadow: 0px 0px 20px #616161;
+}
+.carouselBackground{
+  background-color: rgb(227, 231, 245);
+  margin-bottom: 40px;
+}
+.carouselIMG{
+  height: 400px;
+  overflow: hidden;
+  object-fit: contain;
+}
 
 .App {
   text-align: center;
@@ -183,10 +198,16 @@
   color: #61dafb;
 }
 .detailBtns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
   margin-bottom: 40px;
 }
 .detailRow{
+  padding: 50px;
+  padding-left: 0;
+  padding-right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
