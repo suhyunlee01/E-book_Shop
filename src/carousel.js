@@ -1,35 +1,23 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
-import bg from './img/전독시1.jpg';
+import Carousel from 'react-bootstrap/Carousel';
+import BannerImg from './BannerImg';
 
+function Carousels(props) {
 
-export default class Fade extends Component {
-  render() {
-    const settings = {
-      dots: true,
-      fade: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
-    return (
-      <div>
-        <Slider {...settings}>
-          <div>
-            <img src={bg} />
-          </div>
-          <div>
-            <img src={bg} />
-          </div>
-          <div>
-            <img src={bg} />
-          </div>
-          <div>
-            <img src={bg} />
-          </div>
-        </Slider>
-      </div>
-    );
-  }
+  let {url1, url2, url3} = props;
+
+  return (
+    <Carousel className='carouselBackground'>
+      <Carousel.Item>
+        <BannerImg bgurl={url1}/>
+      </Carousel.Item>
+      <Carousel.Item>
+        <BannerImg bgurl={url2}/>
+      </Carousel.Item>
+      <Carousel.Item>
+        <BannerImg bgurl={url3} />
+      </Carousel.Item>
+    </Carousel>
+  );
 }
+
+export default Carousels;
