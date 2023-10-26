@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.80b5117f.css",
-    "main.js": "/static/js/main.10fdc75f.js",
-    "static/js/145.a0c3204c.chunk.js": "/static/js/145.a0c3204c.chunk.js",
-    "static/js/513.e87b9680.chunk.js": "/static/js/513.e87b9680.chunk.js",
-    "static/js/787.6521655c.chunk.js": "/static/js/787.6521655c.chunk.js",
-    "static/media/전독시1.jpg": "/static/media/전독시1.cac42b36a878736bc182.jpg",
-    "static/media/화산귀환1.webp": "/static/media/화산귀환1.e204ebf586f46e92f0bd.webp",
-    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "index.html": "/index.html",
-    "main.80b5117f.css.map": "/static/css/main.80b5117f.css.map",
-    "main.10fdc75f.js.map": "/static/js/main.10fdc75f.js.map",
-    "145.a0c3204c.chunk.js.map": "/static/js/145.a0c3204c.chunk.js.map",
-    "513.e87b9680.chunk.js.map": "/static/js/513.e87b9680.chunk.js.map",
-    "787.6521655c.chunk.js.map": "/static/js/787.6521655c.chunk.js.map"
+    "main.css": "/E-book_Shop/static/css/main.9dfcffc1.css",
+    "main.js": "/E-book_Shop/static/js/main.023c549e.js",
+    "static/js/145.a0c3204c.chunk.js": "/E-book_Shop/static/js/145.a0c3204c.chunk.js",
+    "static/js/513.e87b9680.chunk.js": "/E-book_Shop/static/js/513.e87b9680.chunk.js",
+    "static/js/787.6521655c.chunk.js": "/E-book_Shop/static/js/787.6521655c.chunk.js",
+    "static/media/전독시1.jpg": "/E-book_Shop/static/media/전독시1.cac42b36a878736bc182.jpg",
+    "static/media/화산귀환1.webp": "/E-book_Shop/static/media/화산귀환1.e204ebf586f46e92f0bd.webp",
+    "static/media/slick.svg": "/E-book_Shop/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/E-book_Shop/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/E-book_Shop/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/E-book_Shop/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/E-book_Shop/index.html",
+    "main.9dfcffc1.css.map": "/E-book_Shop/static/css/main.9dfcffc1.css.map",
+    "main.023c549e.js.map": "/E-book_Shop/static/js/main.023c549e.js.map",
+    "145.a0c3204c.chunk.js.map": "/E-book_Shop/static/js/145.a0c3204c.chunk.js.map",
+    "513.e87b9680.chunk.js.map": "/E-book_Shop/static/js/513.e87b9680.chunk.js.map",
+    "787.6521655c.chunk.js.map": "/E-book_Shop/static/js/787.6521655c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.80b5117f.css",
-    "static/js/main.10fdc75f.js"
+    "static/css/main.9dfcffc1.css",
+    "static/js/main.023c549e.js"
   ]
 }
