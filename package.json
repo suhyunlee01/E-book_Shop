@@ -28,6 +28,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://suhyunlee01.github.io/E-book_Shop/",
   "eslintConfig": {
     "extends": [
       "react-app",
