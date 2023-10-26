@@ -10,7 +10,7 @@ import toonData from './ToonData';
 import Home from './Home';
 import data from './data';
 //라우터 제작 시 필요
-import { Route, Routes, Link, useNavigate, Outlet } from 'react-router-dom';
+import { Route, Routes, Link, useNavigate, Outlet, HashRouter as Router} from 'react-router-dom';
 
 //나중에 랜더링되어도 되는 페이지들은 늦게 import하기
 // import NobelDetails from './pages/Details';
@@ -59,13 +59,13 @@ function App() {
     <div className="App">
       <Navbar className='navbar' bg="primary" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="/">Reada Books</Navbar.Brand>
+          <Navbar.Brand href="#/">Reada Books</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">웹소설</Nav.Link>
-            <Nav.Link href="/toon">웹툰</Nav.Link>
-            <Nav.Link href="/about">내 정보</Nav.Link>
+            <Nav.Link href="#/toon">웹툰</Nav.Link>
+            <Nav.Link href="#/about">내 정보</Nav.Link>
           </Nav>
-          <Button onClick={()=>{navigate("/cart")}} className='BtnLogIn' variant="outline-light">장바구니</Button>{' '}
+          <Button onClick={()=>{navigate("#/cart")}} className='BtnLogIn' variant="outline-light">장바구니</Button>{' '}
         </Container>
       </Navbar>
 
