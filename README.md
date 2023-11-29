@@ -1,5 +1,9 @@
+#Reada Books
+리액트 상태관리 학습을 위해 E-book과 웹툰 소장본을 구매할 수 있는 사이트를 제작했습니다.
 
-[노션 페이지 바로가기](https://jewel-woodpecker-781.notion.site/Reada-Books-1f4835cd00a24aecb705aca04a021d47)
+[Reada Books 노션 페이지 바로가기](https://jewel-woodpecker-781.notion.site/Reada-Books-1f4835cd00a24aecb705aca04a021d47)
+
+
 [서비스 이용해보기](https://suhyunlee01.github.io/E-book_Shop/)
 
 ### 작업 기간
