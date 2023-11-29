@@ -1,5 +1,5 @@
 
-[노션 페이지 바로가기](https://jewel-woodpecker-781.notion.site/React-1589e39beaea4cbcb80a432ca93b40bb?pvs=21)
+[노션 페이지 바로가기](https://jewel-woodpecker-781.notion.site/Reada-Books-1f4835cd00a24aecb705aca04a021d47)
 [서비스 이용해보기](https://suhyunlee01.github.io/E-book_Shop/)
 
 ### 작업 기간
