@@ -44,5 +44,5 @@
 
 ### 개발 & 학습 기록
 
-[프로젝트 개발과 학습 기록 바로가기](https://jewel-woodpecker-781.notion.site/React-1589e39beaea4cbcb80a432ca93b40bb?pvs=21)
+[프로젝트 개발과 학습 기록 바로가기](https://jewel-woodpecker-781.notion.site/Reada-Books-1f4835cd00a24aecb705aca04a021d47)
 
