@@ -1,5 +1,3 @@
-#Reada Books
-리액트 상태관리 학습을 위해 E-book과 웹툰 소장본을 구매할 수 있는 사이트를 제작했습니다.
 
 [Reada Books 노션 페이지 바로가기](https://jewel-woodpecker-781.notion.site/Reada-Books-1f4835cd00a24aecb705aca04a021d47)
 
